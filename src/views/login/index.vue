@@ -22,5 +22,6 @@ const loginFormRef: any = ref({});
         <n-button>登录</n-button>
       </n-form-item>
     </n-form>
+    <h1 class="text-3xl font-bold underline">Hello world!</h1>
   </div>
 </template>
