@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { testApi } from "@/api/test";
 
 const loginForm = ref({
   username: "",
@@ -7,6 +8,11 @@ const loginForm = ref({
 });
 
 const loginFormRef: any = ref({});
+
+const test = async () => {
+  const { data } = await testApi();
+  console.log(data);
+};
 </script>
 
 <template>
@@ -19,7 +25,7 @@ const loginFormRef: any = ref({});
         <n-input></n-input>
       </n-form-item>
       <n-form-item>
-        <n-button>登录</n-button>
+        <n-button @click="test">登录</n-button>
       </n-form-item>
     </n-form>
     <h1 class="text-3xl font-bold underline">Hello world!</h1>
